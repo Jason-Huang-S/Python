@@ -1,3 +1,8 @@
+利用https://ipstack.com/所提供的方式來查找ip位址，只能查到城市。
+
+
+
+
 import requests as R
 from bs4 import BeautifulSoup 
 import re
@@ -50,7 +55,7 @@ def get_country(ips):
     用法是http://api.ipstack.com/[IP位置]?access_key=[API的鑰匙]
     """
     if ips != "":
-        API_KEY = "2c2bef5a8eeed2a13939c9cb9915f7b9"
+        API_KEY = "API CODE"
         url = "http://api.ipstack.com/" + ips + "?access_key=" + API_KEY
         data = R.get(url).json()
         #取得網址後，將資料轉成json檔案
