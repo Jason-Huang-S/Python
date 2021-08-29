@@ -1,8 +1,9 @@
-利用https://ipstack.com/所提供的方式來查找ip位址，只能查到城市。
+利用https://ipstack.com/ 所提供的方式來查找ip位址，只能查到城市。
+
 ![image](https://github.com/Jason-Huang-S/Python-web-crawler/blob/main/%E9%80%8F%E9%81%8Eip%E4%BE%86%E6%9F%A5%E6%89%BE%E6%AD%A4ip%E5%9F%8E%E5%B8%821.png)
 
 
-
+```python
 import requests as R
 from bs4 import BeautifulSoup 
 import re
@@ -71,3 +72,4 @@ for link in links: #進入各個文章的連結 取得文章內容
     文章內文 = get_page(link) #取得文章內容
     ip = get_ips(文章內文)
     print("文章連結：", link, "此人住在：", get_country(ip))
+```
