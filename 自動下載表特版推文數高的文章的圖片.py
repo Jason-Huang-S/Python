@@ -49,7 +49,7 @@ def getdate(url):
     #字串處理
 
     for date in dates:
-        if today_time in date.text or "8/29" in date.text: #如果文章是今天日期的話
+        if today_time in date.text or "8/29" in date.text: #如果文章是今天日期的話，也可以自訂文章日期
             return True
         else:
             return False
