@@ -49,7 +49,7 @@ def getdate(url):
     #字串處理
 
     for date in dates:
-        if today_time in date.text or "8/29" in date.text: #如果文章是今天日期的話，也可以自訂文章日期
+        if today_time in date.text or "9/16" in date.text: #如果文章是今天日期的話，也可以自訂文章日期
             return True
         else:
             return False
@@ -57,7 +57,6 @@ def getdate(url):
 def get_content(html):#回傳所有符合文章的標題 回傳title links
 
     html = B(html, "html.parser")
-    input("要取得的文章日期：\n")
     push = int(input("該文章至少要得到的推文數：\n")) #推文數設定
     """得到上一頁"""
     #上一頁的網址放在 <div class = "btn-group btn-group-paging">
@@ -70,6 +69,7 @@ def get_content(html):#回傳所有符合文章的標題 回傳title links
     url = pre_pages[1].get("href")
     number = rule.search(url) #從資料中只取出數字 也就是當頁的數字
     number = number.group() 
+    number = int(number) + 1
 
     titles =[] #用來儲存所有符合的文章標題
     links = [] #用來存放links 
